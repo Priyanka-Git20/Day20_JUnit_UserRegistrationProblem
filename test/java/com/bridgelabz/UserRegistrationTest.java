@@ -56,14 +56,27 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void  givenPasswordAsPerRule1_WhenValid_ShouldReturnTrue(){
+    public void  givenPasswordAsPerRule1_Having8Characters_WhenValid_ShouldReturnTrue(){
         boolean valid = userRegistration.passwordRule1("ASasc123@");
         Assert.assertEquals(true,valid);
     }
 
     @Test
-    public void  givenPasswordAsPerRule1_WhenInvalid_ShouldReturnTrue(){
+    public void  givenPasswordAsPerRule1_Having8Characters_WhenInvalid_ShouldReturnTrue(){
         boolean valid = userRegistration.passwordRule1("AV12@#");
         Assert.assertEquals(false,valid);
     }
+
+    @Test
+    public void  givenPasswordAsPerRule2_ShouldHaveAtleast1UpperCase_WhenValid_ShouldReturnTrue(){
+        boolean valid = userRegistration.passwordRule2("ASasc123@");
+        Assert.assertEquals(true,valid);
+    }
+
+    @Test
+    public void  givenPasswordAsPerRule2_ShouldHaveAtleast1UpperCase_WhenInvalid_ShouldReturnTrue(){
+        boolean valid = userRegistration.passwordRule2("abc1234@df1");
+        Assert.assertEquals(false,valid);
+    }
+
 }

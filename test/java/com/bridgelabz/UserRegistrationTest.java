@@ -2,7 +2,6 @@ package com.bridgelabz;
 
 import com.bridgelabz.junit.UserRegistration;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class UserRegistrationTest {
@@ -20,5 +19,15 @@ public class UserRegistrationTest {
         Assert.assertEquals(false,valid);
     }
 
+    @Test
+    public void  givenLastName_WhenValid_ShouldReturnTrue(){
+        boolean valid = userRegistration.lastName("Salunkhe");
+        Assert.assertEquals(true,valid);
+    }
 
+    @Test
+    public void  givenLastName_WhenInvalid_ShouldReturnTrue(){
+        boolean valid = userRegistration.lastName("salunkhe");
+        Assert.assertEquals(false,valid);
+    }
 }

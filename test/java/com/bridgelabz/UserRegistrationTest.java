@@ -30,4 +30,16 @@ public class UserRegistrationTest {
         boolean valid = userRegistration.lastName("salunkhe");
         Assert.assertEquals(false,valid);
     }
+
+    @Test
+    public void  givenEmailAddress_WhenValid_ShouldReturnTrue(){
+        boolean valid = userRegistration.emailAddress("priyanka.chavan1408@gmail.com");
+        Assert.assertEquals(true,valid);
+    }
+
+    @Test
+    public void  givenEmailAddress_WhenInvalid_ShouldReturnTrue(){
+        boolean valid = userRegistration.emailAddress("priya.chavan1408@");
+        Assert.assertEquals(false,valid);
+    }
 }
